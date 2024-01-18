@@ -17,6 +17,16 @@
   padding: 5px;
   margin-bottom: 10px;
 }
+.centrarDiv{
+  margin: 0 auto;
+  max-width: 900px;
+
+}
+.container{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
 .buttonStyle {
   background-color: #E01A4F;
@@ -60,6 +70,7 @@
   height: 36px;
   animation: spin89345 1s linear infinite;
 }
+
 
 @keyframes spin89345 {
   0% {
