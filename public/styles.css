@@ -8,24 +8,28 @@
   max-width: 300px;
   margin: 0 auto;
 }
+
 .rutTitle {
   display: block;
   margin-bottom: 10px;
 }
+
 .inputDiv {
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
 }
-.centrarDiv{
+
+.centrarDiv {
   margin: 0 auto;
   max-width: 900px;
 
 }
-.container{
-display: flex;
-flex-direction: column;
-align-items: center;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buttonStyle {
@@ -36,7 +40,7 @@ align-items: center;
   cursor: pointer;
 }
 
-.loaderFather{
+.loaderFather {
   width: 100%;
   height: 100vh;
   background-color: rgba(197, 223, 198, 0.2);

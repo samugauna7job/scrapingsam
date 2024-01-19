@@ -54,8 +54,8 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         const nuevoDiv2 = document.createElement('div');
         nuevoDiv2.innerHTML = `<p>Actividades Econòmicas: ${actividad}</p>`;
         contenedor3.appendChild(nuevoDiv2);
-        const periodos= document.createElement('div');
-        periodos.innerHTML='<p>Periodos Tributarios Mensuales</p>';
+        const periodos = document.createElement('div');
+        periodos.innerHTML = '<p>Periodos Tributarios Mensuales</p>';
         contenedor4.appendChild(periodos)
         const imagen = document.createElement("img");
 
