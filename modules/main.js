@@ -46,19 +46,19 @@ async function runAllUsers(rut,password) {
 //     const driver = new Builder().forBrowser('chrome').build();
 //     //Claves hardcodeadas para un solo test
 //         // {
-//         //     "rut": "76502363-7",
-//         //     "clave": "HTML2020"
+//         //     "rut": "",
+//         //     "clave": ""
 //         // }
-//     await loginModule(driver, "76502363-7", "HTML2020")
+//     await loginModule(driver, "", "")
 //     await getFormularioF29(driver);
 //     //driver.quit();
 //     } catch (error) {
 //         console.log(`error in runOnlyTest ${error}`);
 //     }
 // }
-        //     await loginModule(driver, , "HTML2020")
-// const rut = "769505563";
-// const password = "apsc00aa00" 
+        //     await loginModule(driver, , "")
+// const rut = "";
+// const password = "
 // runAllUsers()
 // runOnlyTest()
 module.exports= runAllUsers
