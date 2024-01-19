@@ -8,4 +8,17 @@ Proyecto Web Scraping
 REQUERIMIENTOS FUNCIONALES
 
 *Registro de usuario : Rut y Contraseña.
-*
+
+*Se deben obtener los siguientes datos : 
+--Representantes Legales : Rut , Nombre
+--Domicilio del Titular
+--Actividad Economica del Titular
+--Imagen de Facturacion 
+
+REQUERIMIENTOS NO FUNCIONALES
+Rendimiento.
+Tiempo de carga adecuado
+Compatibilidad.
+Ser compatible con varios navegadores.
+Usabilidad
+Interfaz facil de usar. 
