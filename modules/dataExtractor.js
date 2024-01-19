@@ -57,6 +57,21 @@ const { table } = require('console');
         console.log(`error in getAdress: ${error}`);
     }
 };
+//Funcion que obtiene el nombre del Titular de los datos
+ const getOwnerOfData = async (driver) => {
+    try {
+        //Localizar el elemento 
+        const infoOwner =  await driver.findElement(By.id('nameCntr'));
+        //Obtener el texto del elemento
+        const owner = await infoOwner.getText();
+        const ownerObj = {
+            owner
+        }
+        return ownerObj
+    } catch (error) {
+        console.log(`error in getOwnerOfData: ${error}`);
+    }
+};
 //Funcion que obtiene los datos de la seccion actividades economicas
 //Especificamente el contenido de "Glosa descriptiva de actividades economicas"
  const getEconomicActivities = async (driver) => {
@@ -141,4 +156,4 @@ const { table } = require('console');
 };
 
 
-module.exports = {getNameAndRut,getAdress,getEconomicActivities,getFormularioF29,getXvalue};
+module.exports = {getNameAndRut,getAdress,getEconomicActivities,getFormularioF29,getXvalue, getOwnerOfData};
