@@ -26,6 +26,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
       const loaderFather = document.querySelector('.loaderFather');
       // Si hay datos, oculta el loader y procesa la información
       if (jsonData) {
+        console.log(jsonData)
         loaderFather.style.display = 'none';
         const contenedor = document.getElementById('contenedor');
         const contenedor2 = document.getElementById('contenedor2');
@@ -47,13 +48,13 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
           nuevoDiv.innerHTML = `<p>Representante legal: </p><p>Nombre: ${nuevo.nombre}</p><p>RUT: ${nuevo.rut}</p><p>Fecha: ${nuevo.fecha}</p>`;
           contenedor.appendChild(nuevoDiv);
         }
-
+        const titular = jsonData[2].owner
         const domicilio = jsonData[1].adress;
         const nuevoDiv1 = document.createElement('div');
-        nuevoDiv1.innerHTML = `<p>Domicilio Titular: ${domicilio}</p>`;
+        nuevoDiv1.innerHTML = `<p>Titular:${titular}</p><p>Domicilio Titular: ${domicilio}</p>`;
         contenedor2.appendChild(nuevoDiv1);
 
-        const actividad = jsonData[2]["Glosa descriptiva de actividades económicas"];
+        const actividad = jsonData[3]["Glosa descriptiva de actividades económicas"];
         const nuevoDiv2 = document.createElement('div');
         nuevoDiv2.innerHTML = `<p>Actividades Econòmicas: ${actividad}</p>`;
         contenedor3.appendChild(nuevoDiv2);
@@ -62,7 +63,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         contenedor4.appendChild(periodos)
         const imagen = document.createElement("img");
 
-        const imagenBase64 = jsonData[3].screenshot
+        const imagenBase64 = jsonData[4].screenshot
         imagen.src = "data:image/png;base64," + imagenBase64;;
         contenedor4.appendChild(imagen);
 

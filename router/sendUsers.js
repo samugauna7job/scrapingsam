@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 
   //  const filePath = 'screenshot.png';
   //  writeFileSync(filePath, imagen, 'base64');
-
+console.log(data)
   res.status(200).json(data);
 });
 

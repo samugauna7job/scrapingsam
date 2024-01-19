@@ -3,57 +3,55 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="icon" href="./images/images.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" href="./images/images.png" type="image/png">
 
-    <title>Recolector de Datos</title>
+  <title>Recolector de Datos</title>
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
     <h2 class="titulo">Check de Datos</h2>
     <form id="miFormulario" class="formDiv">
-        <label for="rut" class="rutTitle">Rut:</label>
-        <input class="inputDiv" type="text" id="rut" name="rut"  required>
-        <br>
-        <label for="password" style="display: block; margin-bottom:
+      <label for="rut" class="rutTitle">Rut:</label>
+      <input class="inputDiv" type="text" id="rut" name="rut" required>
+      <br>
+      <label for="password" style="display: block; margin-bottom:
 10px;">Contraseña:</label>
-        <input type="password" id="password" name="password" class="inputDiv">
-        <br>
-        <button type="submit" class="buttonStyle">Enviar</button>
+      <input type="password" id="password" name="password" class="inputDiv">
+      <br>
+      <button type="submit" class="buttonStyle">Enviar</button>
     </form>
-
-    <div id="contenedor" class="centrarDiv"></div>
     <div id="contenedor2" class="centrarDiv"></div>
+    <div id="contenedor" class="centrarDiv"></div>
     <div id="contenedor3" class="centrarDiv"></div>
     <div id="contenedor4" class="centrarDiv"></div>
 
     <!-- <img id="imagenRenderizada" src="" alt="Imagen Renderizada"> -->
 
 
-   
 
 
- 
+
+
     <h2 class="titulo">Formulario de Carga de Archivos</h1>
 
-  <form  class="formDiv" id="fileUploadForm"  enctype="multipart/form-data"  >
-    <label for="file">Selecciona un archivo:</label>
-    <input type="file" id="fileInput" name="file" accept=".xlsx, .xls" required>
-    <br>
-    <button type="submit">Enviar Archivo</button>
-  </form> 
+      <form class="formDiv" id="fileUploadForm" enctype="multipart/form-data">
+        <label for="file">Selecciona un archivo:</label>
+        <input type="file" id="fileInput" name="file" accept=".xlsx, .xls" required>
+        <br>
+        <button type="submit">Enviar Archivo</button>
+      </form>
+      <div id="responseContainer"></div>
 
-  <div id="responseContainer"></div>
+      <div class="loaderFather">
+        <div class="loader"></div>
+      </div>
 
-  <div class="loaderFather">
-  <div class="loader"></div>
-</div>
-
-  <script src="scripts.js" defer></script>
-</div>
+      <script src="scripts.js" defer></script>
+  </div>
 </body>
 
 </html>
