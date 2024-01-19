@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 const port = 3000;
-
+console.log("hola lucas como va");
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", router);
 
