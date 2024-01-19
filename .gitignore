@@ -1,2 +1,11 @@
-/mode_modules
+/node_modules
 **/node_modules
+/resultadoFiltrado.json
+**/resultadoFiltrado.json
+/ULTIMARECOPILACION.json
+
+
+**/ULTIMARECOPILACION.json
+
+
+
