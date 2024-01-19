@@ -1,7 +1,7 @@
 const { Builder } = require('selenium-webdriver');
 const loginModule = require('./loginModule.js');
 const dataExtractor = require('./dataExtractor.js');
-const { getEconomicActivities, getFormularioF29, getNameAndRut, getAdress } = dataExtractor;
+const { getEconomicActivities, getFormularioF29, getNameAndRut, getAdress, getOwnerOfData } = dataExtractor;
 const { writeFileSync, readFileSync } = require('fs');
 // const jsonData = JSON.parse(readFileSync('resultadoFiltrado.json', 'utf-8'));
 
@@ -22,6 +22,9 @@ async function runAllUsers(rut,password) {
         //Domicilio
         const info2 = await getAdress(driver)
         infoArray.push(info2)
+        //Nombre del dueño de los datos
+        const infoAdicional = await getOwnerOfData(driver)
+        infoArray.push(infoAdicional)
         //Actividades economicas
         const info3 = await getEconomicActivities(driver);
         infoArray.push(info3)
