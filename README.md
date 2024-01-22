@@ -6,7 +6,6 @@ Proyecto Web Scraping
 • Documentación de los requerimientos funcionales y no funcionales.
 
 REQUERIMIENTOS FUNCIONALES
-
 *Registro de usuario : Rut y Contraseña.
 
 *Se deben obtener los siguientes datos : 
