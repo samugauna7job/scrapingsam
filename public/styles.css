@@ -1,3 +1,7 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
 .titulo {
   font-size: larger;
   color: #F29100;
@@ -19,13 +23,6 @@
   padding: 5px;
   margin-bottom: 10px;
 }
-
-.centrarDiv {
-  margin: 0 auto;
-  max-width: 900px;
-
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -33,11 +30,12 @@
 }
 
 .buttonStyle {
-  background-color: #E01A4F;
+  background-color: rgb(1, 202, 1);
   color: white;
   padding: 10px;
   border: none;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .loaderFather {
@@ -73,6 +71,64 @@
   width: 36px;
   height: 36px;
   animation: spin89345 1s linear infinite;
+}
+/* css aplicado al renderizado de datos */
+.renderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.containerOwner{
+  border-top: 5px solid rgb(17 17 212 / 65%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.titleTitular{
+  text-transform: uppercase;
+  color: rgb(10 10 218);
+}
+.containerRepreLegal{
+  border-top: 5px solid rgb(17 17 212 / 65%);
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  text-align: center;
+}
+.titleRepreLegal{
+  text-transform: uppercase;
+  color: rgb(10 10 218);
+}
+.containerActEco{
+  border-top: 5px solid rgb(17 17 212 / 65%);
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  text-align: center;
+}
+.titleActEco{
+  text-transform: uppercase;
+  color: rgb(10 10 218);
+}
+.containerf29 {
+  border-top: 5px solid rgb(17 17 212 / 65%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.titleF29{
+  text-transform: uppercase;
+  color: rgb(10 10 218);
+}
+.cleanData {
+  margin-top: 25px;
+  background-color: #e92f2f;
+  color: white;
+  font-size: 20px;
 }
 
 

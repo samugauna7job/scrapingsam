@@ -12,13 +12,11 @@ router.post("/", async (req, res) => {
     firstName: "manuel",
     lastName: "Echegaray",
   });
-  console.log("aaaaaaaaaaaa",jane)
   const data = await runAllUsers(rut, password)
   //  const imagen= data[3].screenshot;
 
   //  const filePath = 'screenshot.png';
   //  writeFileSync(filePath, imagen, 'base64');
-console.log(data)
   res.status(200).json(data);
 });
 
