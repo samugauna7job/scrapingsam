@@ -7,6 +7,8 @@ const sequelize = new Sequelize("usuarios", "root", "montevideo2024", {
   dialect: "mysql",
 });
 
+
+
 async function testBDatos() {
   try {
     await sequelize.authenticate();

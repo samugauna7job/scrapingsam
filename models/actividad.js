@@ -3,13 +3,18 @@ const sequelize = require('../config/db');
 
 const Actividad = sequelize.define('Actividad', {
     // Model attributes are defined here
-    firstName: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    lastName: {
-      type: DataTypes.STRING, // Agregar una coma aquí
-      allowNull: false // allowNull defaults to true
+    rut_titular: {
+      type: DataTypes.INTEGER, // Agregar una coma aquí
+      allowNull: false, // allowNull defaults to true
+      references: {
+        model: 'Titular',
+        key: 'rut',
+      }
+
     }
   }, {
     timestamps: false
@@ -18,7 +23,7 @@ const Actividad = sequelize.define('Actividad', {
 
   
 (async () => {
-  await sequelize.sync();
+  await sequelize.sync({ force: true });
   console.log('Modelo User sincronizado con la base de datos.');
 })();
 
