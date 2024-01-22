@@ -6,24 +6,17 @@ const Actividad = sequelize.define('Actividad', {
     name: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    rut_titular: {
-      type: DataTypes.INTEGER, // Agregar una coma aquí
-      allowNull: false, // allowNull defaults to true
-      references: {
-        model: 'Titular',
-        key: 'rut',
-      }
-
     }
   }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
+
     // Other model options go here
   });
 
   
 (async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({});
   console.log('Modelo User sincronizado con la base de datos.');
 })();
 

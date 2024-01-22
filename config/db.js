@@ -5,6 +5,8 @@ const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize("usuarios", "root", "montevideo2024", {
   host: "localhost",
   dialect: "mysql",
+  logging: false,
+  // force: true
 });
 
 

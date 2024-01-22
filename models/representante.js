@@ -17,27 +17,21 @@ const Representante = sequelize.define('Representante', {
       type: DataTypes.DATE, // Agregar una coma aquí
       allowNull: false // allowNull defaults to true
     },
-    rut_titular: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Titular',
-        key: 'rut',
-      }
-
-    },
+  
     id_represents: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      autoIncrement:true
+      // autoIncrement:true
     }
   }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
     // Other model options go here
   });
 
   
 (async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({});
   console.log('Modelo User sincronizado con la base de datos.');
 })();
 
