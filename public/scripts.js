@@ -1,8 +1,10 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+
+let respaldo; 
 document.getElementById('miFormulario').addEventListener('submit', function (event) {
   event.preventDefault();
-
   const loaderFather = document.querySelector('.loaderFather');
-console.log("estoy")
   // Muestra el loader al enviar el formulario
   loaderFather.style.display = 'flex';
 
@@ -23,6 +25,7 @@ console.log("estoy")
     .then(data => {
 
       const jsonData = JSON.parse(data);
+      respaldo = jsonData
       const loaderFather = document.querySelector('.loaderFather');
       // Si hay datos, oculta el loader y procesa la información
       if (jsonData) {
@@ -72,6 +75,7 @@ console.log("estoy")
         const buttonSaveClient = document.createElement('div')
         buttonSaveClient.innerHTML = `<button class="buttonStyle" type="submit">Guardar cliente</button>`
         buttonSaveAndDelete.appendChild(buttonSaveClient)
+
         //Div que limpia los datos recargando la pagina
         const buttonClean = document.createElement('div')
         buttonClean.innerHTML = `<button class="cleanData" type="submit">Limpiar datos y realizar una nueva busqueda</button>`
@@ -90,7 +94,7 @@ console.log("estoy")
       }
     })
     .catch(error => {
-      console.error('Error al enviar el formulario:', error);
+      console.error('Error al enviar el formulario:');
     })
     .finally(() => {
       // Oculta el loader después de procesar la respuesta
@@ -102,9 +106,9 @@ console.log("estoy")
 //                    
 
 /* -------------------------*/
-const responseContainer = document.getElementById('responseContainer');
+// const responseContainer = document.getElementById('responseContainer');
 
-document.getElementById('fileUploadForm').addEventListener('submit',
+/*document.getElementById('fileUploadForm').addEventListener('submit',
   function (event) {
     event.preventDefault();
 
@@ -133,4 +137,21 @@ document.getElementById('fileUploadForm').addEventListener('submit',
           console.error('Error en la solicitud:', error);
         });
     }
+  })*/
+
+  document.getElementById('buttonSaveAndDelete').addEventListener('click', function (event) {
+       event.preventDefault();
+      respaldo[2].rut= (document.getElementById('rut').value) 
+      // console.log(respaldo)
+      fetch('/saveinfo', {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+
+        },
+        body: JSON.stringify(respaldo)
+      }).then(res => {  console.log(res)})
+      
+    
   })
+})

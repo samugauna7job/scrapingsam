@@ -31,11 +31,10 @@ const Titular = sequelize.define('Titular', {
   // Other model options go here
 });
 
-Titular.hasMany(Representante, { foreignKey: 'rut_titular'});
-Representante.belongsTo(Titular, { foreignKey: 'rut_titular' });
+Titular.belongsToMany(Representante, { through: 'TitularRepresentante', foreignKey: 'rut_titular',timestamps: false });
+Representante.belongsToMany(Titular, { through: 'TitularRepresentante', foreignKey: 'rut_representants',timestamps: false });
 Titular.hasOne(Actividad, { foreignKey: 'rut_titular' });
 Actividad.belongsTo(Titular, { foreignKey: 'rut_titular' });
-
 Titular.hasOne(Periodos, { foreignKey: 'rut_titular' });
 Periodos.belongsTo(Titular, { foreignKey: 'rut_titular' });
 

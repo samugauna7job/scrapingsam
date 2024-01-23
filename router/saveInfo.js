@@ -6,9 +6,8 @@ const saveData = require("../controllers/saveData")
 router.post("/", async (req, res) => {
   const dataClient = req.body;
   console.log(dataClient)
-  const number= Number.parseInt(rut)
   
-  const data = await saveData(rut)
+  
   //  const imagen= data[3].screenshot;
 
   //  const filePath = 'screenshot.png';
