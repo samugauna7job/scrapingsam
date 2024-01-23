@@ -17,6 +17,8 @@ router.post("/", async (req, res) => {
     address: "Calle sin Numero",
     rut:number
   });
+
+
   const repre = await Representante.create({
     name:"Carlos",
     rut_representants:256545566,
@@ -37,12 +39,13 @@ router.post("/", async (req, res) => {
 
   })
   console.log("aaaaaaaaaaaa",jane.toJSON())
+  
   const data = await runAllUsers(rut, password)
   //  const imagen= data[3].screenshot;
 
   //  const filePath = 'screenshot.png';
   //  writeFileSync(filePath, imagen, 'base64');
-      // console.log(data)
+
   res.status(200).json(data);
 });
 

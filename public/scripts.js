@@ -32,34 +32,34 @@ console.log("estoy")
         const contenedor2 = document.getElementById('contenedor2');
         const contenedor3 = document.getElementById('contenedor3');
         const contenedor4 = document.getElementById('contenedor4');
-
+        const renderContainer = document.getElementById('rendContainer')
         //si es un objeto o si es un array
         if (Array.isArray(jsonData[0])) {
           jsonData[0].forEach(ele => {
             // Crea un div por cada objeto
             const nuevoDiv = document.createElement('div');
             // Agrega la información del objeto al div
-            nuevoDiv.innerHTML = `<p>Representante legal: </p><p>Nombre: ${ele.nombre}</p><p>RUT: ${ele.rut}</p><p>Fecha: ${ele.fecha}</p>`;
+            nuevoDiv.innerHTML = `<p>Representante legal: </p><p>Nombre: ${ele.nombre}</p><p>RUT: ${ele.rut}</p><p>A partir de: ${ele.fecha}</p>`;
             contenedor.appendChild(nuevoDiv);
           });
         } else {
           const nuevo = jsonData[0]
           const nuevoDiv = document.createElement('div');
-          nuevoDiv.innerHTML = `<p>Representante legal: </p><p>Nombre: ${nuevo.nombre}</p><p>RUT: ${nuevo.rut}</p><p>Fecha: ${nuevo.fecha}</p>`;
+          nuevoDiv.innerHTML = `<p class="titleRepreLegal">Representante legal</p><p>Nombre: ${nuevo.nombre}</p><p>RUT: ${nuevo.rut}</p><p>A partir de: ${nuevo.fecha}</p>`;
           contenedor.appendChild(nuevoDiv);
         }
         const titular = jsonData[2].owner
         const domicilio = jsonData[1].adress;
         const nuevoDiv1 = document.createElement('div');
-        nuevoDiv1.innerHTML = `<p>Titular:${titular}</p><p>Domicilio Titular: ${domicilio}</p>`;
+        nuevoDiv1.innerHTML = `<p class="titleTitular">Titular y Domicilio</p><p>${titular}</p><p>${domicilio}</p>`;
         contenedor2.appendChild(nuevoDiv1);
 
         const actividad = jsonData[3]["Glosa descriptiva de actividades económicas"];
         const nuevoDiv2 = document.createElement('div');
-        nuevoDiv2.innerHTML = `<p>Actividades Econòmicas: ${actividad}</p>`;
+        nuevoDiv2.innerHTML = `<p class="titleActEco">Actividades económicas</p><p>${actividad}</p>`;
         contenedor3.appendChild(nuevoDiv2);
         const periodos = document.createElement('div');
-        periodos.innerHTML = '<p>Periodos Tributarios Mensuales</p>';
+        periodos.innerHTML = '<p class="titleF29">Periodos Tributarios Mensuales</p>';
         contenedor4.appendChild(periodos)
         const imagen = document.createElement("img");
 
@@ -67,6 +67,22 @@ console.log("estoy")
         imagen.src = "data:image/png;base64," + imagenBase64;;
         contenedor4.appendChild(imagen);
 
+        // Creacion del div de guardar cliente
+        const buttonSaveClient = document.createElement('div')
+        buttonSaveClient.innerHTML = `<button class="buttonStyle" type="submit">Guardar cliente</button>`
+        renderContainer.appendChild(buttonSaveClient)
+        //Div que limpia los datos recargando la pagina
+        const buttonClean = document.createElement('div')
+        buttonClean.innerHTML = `<button class="cleanData" type="submit">Limpiar datos y realizar una nueva busqueda</button>`
+        renderContainer.appendChild(buttonClean)
+        //Escucha del boton clean
+        const cleanButton = document.querySelector('.cleanData');
+            cleanButton.addEventListener('click', function (event) {
+                // Evita que el formulario se envíe normalmente
+                event.preventDefault();
+                // Recarga la página
+                location.reload();
+            });
       } else {
         // Si no hay datos, muestra el loader
         loaderFather.style.display = 'block';
