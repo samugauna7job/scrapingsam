@@ -5,7 +5,11 @@ const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize("usuarios", "root", "Liliana1025", {
   host: "localhost",
   dialect: "mysql",
+  logging: false,
+  // force: true
 });
+
+
 
 async function testBDatos() {
   try {
