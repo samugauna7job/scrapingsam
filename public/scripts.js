@@ -43,6 +43,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
             contenedor.appendChild(nuevoDiv);
           });
         } else {
+          renderContainer.style.display = 'flex';
           const nuevo = jsonData[0]
           const nuevoDiv = document.createElement('div');
           nuevoDiv.innerHTML = `<p class="titleRepreLegal">Representante legal</p><p>Nombre: ${nuevo.nombre}</p><p>RUT: ${nuevo.rut}</p><p>A partir de: ${nuevo.fecha}</p>`;
@@ -66,15 +67,15 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         const imagenBase64 = jsonData[4].screenshot
         imagen.src = "data:image/png;base64," + imagenBase64;;
         contenedor4.appendChild(imagen);
-
+        const buttonSaveAndDelete = document.getElementById('buttonSaveAndDelete')
         // Creacion del div de guardar cliente
         const buttonSaveClient = document.createElement('div')
         buttonSaveClient.innerHTML = `<button class="buttonStyle" type="submit">Guardar cliente</button>`
-        renderContainer.appendChild(buttonSaveClient)
+        buttonSaveAndDelete.appendChild(buttonSaveClient)
         //Div que limpia los datos recargando la pagina
         const buttonClean = document.createElement('div')
         buttonClean.innerHTML = `<button class="cleanData" type="submit">Limpiar datos y realizar una nueva busqueda</button>`
-        renderContainer.appendChild(buttonClean)
+        buttonSaveAndDelete.appendChild(buttonClean)
         //Escucha del boton clean
         const cleanButton = document.querySelector('.cleanData');
             cleanButton.addEventListener('click', function (event) {
