@@ -2,7 +2,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
   event.preventDefault();
 
   const loaderFather = document.querySelector('.loaderFather');
-
+console.log("estoy")
   // Muestra el loader al enviar el formulario
   loaderFather.style.display = 'flex';
 
