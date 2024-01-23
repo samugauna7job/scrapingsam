@@ -1,41 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
 body{
+  background-color: #DCD9D4;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+  background-blend-mode: soft-light,screen;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
+
 .titulo {
   font-size: larger;
   color: #F29100;
   text-align: center;
+  margin: 15px;
 }
 
 .formDiv {
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.rutTitle {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.inputDiv {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-.container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.buttonStyle {
-  background-color: rgb(1, 202, 1);
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
+.rutTitle {
+  display: block;
+  margin: 10px;
+}
+.passTitle{
+  display: block;
+  margin: 10px;
+}
+
+.inputDiv {
+  width: 100%;
+  max-width: 220px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
   font-size: 20px;
+  font-weight: bold;
+}
+.dataForm{
+  margin: 50px 50px 0px 50px;
+}
+
+.buttonStyle {
+  margin: 10px;
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
 }
 
 .loaderFather {
@@ -73,46 +103,44 @@ body{
   animation: spin89345 1s linear infinite;
 }
 /* css aplicado al renderizado de datos */
-.renderContainer {
-  display: flex;
+#rendContainer {
+  display: none;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
 }
 .containerOwner{
-  border-top: 5px solid rgb(17 17 212 / 65%);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  margin: 15px;
 }
 .titleTitular{
-  text-transform: uppercase;
-  color: rgb(10 10 218);
+  color: rgb(126, 65, 0);
+  margin-bottom: 5px;
 }
 .containerRepreLegal{
-  border-top: 5px solid rgb(17 17 212 / 65%);
-  display: flex;
-  flex-direction: column;
-  font-size: 15px;
-  text-align: center;
+  margin: 15px;
 }
 .titleRepreLegal{
-  text-transform: uppercase;
-  color: rgb(10 10 218);
+  color: rgb(126, 65, 0);
+  margin-bottom: 5px;
 }
 .containerActEco{
-  border-top: 5px solid rgb(17 17 212 / 65%);
-  display: flex;
-  flex-direction: column;
-  font-size: 15px;
-  text-align: center;
+  margin: 15px;
 }
 .titleActEco{
+  color: rgb(126, 65, 0);
+  margin-bottom: 5px;
+}
+.conteinersGroup{
+  border-radius: 10px;
+  border: 2px solid #7b6106; 
   text-transform: uppercase;
-  color: rgb(10 10 218);
+  font-size: 15px;
+  margin: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 25px;
 }
 .containerf29 {
-  border-top: 5px solid rgb(17 17 212 / 65%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,13 +150,28 @@ body{
 }
 .titleF29{
   text-transform: uppercase;
-  color: rgb(10 10 218);
+  color: rgb(126, 65, 0);
+  margin-bottom: 20px;
 }
 .cleanData {
-  margin-top: 25px;
-  background-color: #e92f2f;
-  color: white;
-  font-size: 20px;
+  background: #e92f2f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+.loadFiles{
+  display: none;
+}
+#buttonSaveAndDelete{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
 }
 
 
