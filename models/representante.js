@@ -14,15 +14,15 @@ const Representante = sequelize.define('Representante', {
       allowNull: false // allowNull defaults to true
     },
     fecha: {
-      type: DataTypes.DATE, // Agregar una coma aquí
+      type: DataTypes.DATE, 
       allowNull: false // allowNull defaults to true
     },
   
-    id_represents: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      // autoIncrement:true
-    }
+    // id_represents: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   // autoIncrement:true
+    // }
   }, {
     timestamps: false,
     freezeTableName: true,

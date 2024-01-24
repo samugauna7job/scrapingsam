@@ -5,14 +5,8 @@ const saveData = require("../controllers/saveData")
 
 router.post("/", async (req, res) => {
   const dataClient = req.body;
-  console.log(dataClient)
-  
-  
-  //  const imagen= data[3].screenshot;
-
-  //  const filePath = 'screenshot.png';
-  //  writeFileSync(filePath, imagen, 'base64');
-
+  const data =  await saveData(dataClient)
+  // console.log("dsfsdfdsfdsf",dataClient)
   res.status(200).send("Save with succesfuly");
 });
 
