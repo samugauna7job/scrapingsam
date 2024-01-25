@@ -9,13 +9,16 @@ const sequelize = require("../config/db");
 const runAllUsers = require("../modules/main.js")
 
 router.post("/", async (req, res) => {
+  try {
   const { rut, password } = req.body;
   const number= Number.parseInt(rut)
-  
-  /* -----*/
   const data = await runAllUsers(rut, password)
     res.status(200).json(data);
-  /* -------- */
+} catch (error) {
+  console.error("error en la ruta sendUsers", error);
+  // Expected output: ReferenceError: nonExistentFunction is not defined
+  // (Note: the exact output may be browser-dependent)
+}
   // const titular = await Titular.findOne({ where: { rut:  number } });
   // if (titular) {
   //   const titularWithRepresentante = await Titular.findOne({
