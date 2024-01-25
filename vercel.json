@@ -17,7 +17,7 @@
     "output": "public"
   },
   "install": {
-    "include": ["package.json", "yarn.lock"], // Incluye cualquier otro archivo de dependencias que necesites
-    "command": "yarn install" // O utiliza "npm install" o la herramienta de tu elección
+    "include": ["package.json", "yarn.lock"], 
+    "command": "yarn install" 
   }
 }
