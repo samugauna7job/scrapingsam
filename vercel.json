@@ -17,7 +17,7 @@
     "output": "public"
   },
   "install": {
-    "include": ["package.json", "yarn.lock"], 
-    "command": "yarn install" 
+    "include": ["package.json"], 
+    "command": "npm i" 
   }
 }
