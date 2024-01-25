@@ -21,7 +21,12 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
       'Content-type': 'application/json'
     }
   })
-    .then(response => response.text())
+    .then(response => {
+   if (!response.ok) {
+      throw new Error('La solicitud no fue exitosa');
+   }
+   return response.text();
+})
     .then(data => {
 
       const jsonData = JSON.parse(data);
@@ -93,8 +98,8 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         loaderFather.style.display = 'block';
       }
     })
-    .catch(error => {
-      console.error('Error al enviar el formulario:');
+    .catch(error=> {
+      console.error('Error al enviar el formulario:', error);
     })
     .finally(() => {
       // Oculta el loader después de procesar la respuesta
